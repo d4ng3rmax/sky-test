@@ -3,8 +3,8 @@
 <ul>
   <ng-container *ngFor="let m of movies; let i = index">
     <ng-container *ngIf="m.type == 'carousel-portrait'">
-      <!-- <ng-container *ngFor="let res of m.movies | category:'res.categories'"> -->
-      <ng-container *ngFor="let res of m.movies">
+      <ng-container *ngFor="let res of m.movies | category:'res.categories'">
+      <!-- <ng-container *ngFor="let res of m.movies"> -->
         <li>
           {{ res.title }}
           {{ res.categories }}
