@@ -1,14 +1,14 @@
-<p>home works!</p>
+<p>fine!</p>
 
 <ul>
   <ng-container *ngFor="let m of movies; let i = index">
     <ng-container *ngIf="m.type == 'carousel-portrait'">
-      <ng-container *ngFor="let res of m.movies | category:'res.categories'">
-      <!-- <ng-container *ngFor="let res of m.movies"> -->
+      <!-- <ng-container *ngFor="let res of m.movies | category:'res.categories'"> -->
+      <ng-container *ngFor="let res of m.movies">
         <li>
-          {{ res.title }}
+          <!-- {{ res.title }} -->
           {{ res.categories }}
-          <img src="{{ res.images[0]['url'] }}" width="100" height="150" />
+          <img src="{{ res.images[0]['url'] }}" width="10" height="15" />
         </li>
       </ng-container>
     </ng-container>
