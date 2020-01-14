@@ -11,16 +11,14 @@ export class HomeComponent implements OnInit {
 
   movies: Array<any>;
 
+
+  // https://stackoverflow.com/questions/49915051/angular-ngfor-create-table-with-group-item
   groupArr = this.movies.reduce((r, { group }) => {
     if (!r.some(o => o.group == group)) {
       r.push({ group, groupItem: this.movies.filter(v => v.group == group) });
     }
     return r;
   }, []);
-
-
-
-  // filterBy = 
 
   constructor(private movieService: MoviesService) { }
 
