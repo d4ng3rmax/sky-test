@@ -1,6 +1,6 @@
 <p>home works!</p>
 
-<ul>
+<!-- <ul>
   <ng-container *ngFor="let m of movies">
     <ng-container *ngIf="m.type == 'carousel-portrait'">
       <ng-container *ngFor="let res of m.movies">
@@ -11,4 +11,21 @@
       </ng-container>
     </ng-container>
   </ng-container>
-</ul>
+</ul> -->
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+     </tr>
+       <tbody *ngFor="let item of groupArr">
+            <ng-container>
+       <tr >
+         <td colspan="2"><b>{{item.group}}</b></td>
+       </tr>
+       <tr *ngFor="let value of item.groupItem">
+         <td>{{value.id}}</td>
+         <td>{{value.name}}</td>
+       </tr>
+     </ng-container></tbody>
+  </table>
