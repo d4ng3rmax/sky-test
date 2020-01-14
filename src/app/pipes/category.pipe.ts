@@ -5,23 +5,26 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CategoryPipe implements PipeTransform {
 
-  transform(collection: Array<any>, property: string): Array<any> {
-    // if (!collection) {
-    //   return null;
-    // }
+  transform(collection: Array<any>, category: string): Array<any> {
+    if (!collection) {
+      return null;
+    }
 
-    // const groupedCollection = collection.reduce((previous, current) => {
-    //   if (!previous[current[property]]) {
-    //     previous[current[property]] = [current];
-    //   } else {
-    //     previous[current[property]].push(current);
-    //   }
+    const groupedCollection = collection.reduce((previous, current) => {
+      if (!previous[current[category]]) {
+        previous[current[category]] = [current];
+      } else {
+        previous[current[category]].push(current);
+      }
+      console.log('previous', previous)
+      return previous;
+    }, {});
+    
+    console.log('current', Object.keys(groupedCollection))
+    return Object.keys(groupedCollection).map(key => ({ key, value: groupedCollection[key] }));
 
-    //   return previous;
-    // }, {});
-    // return Object.keys(groupedCollection).map(key => ({ key, value: groupedCollection[key] }));
-    console.log('collection', collection)
-    return collection;
+    // console.log('prop', category)
+    // return collection;
   }
 
 }
