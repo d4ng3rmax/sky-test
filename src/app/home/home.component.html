@@ -3,10 +3,11 @@
 <ul>
   <ng-container *ngFor="let m of movies; let i = index">
     <ng-container *ngIf="m.type == 'carousel-portrait'">
+      <!-- <ng-container *ngFor="let res of m.movies | category:'res.categories'"> -->
       <ng-container *ngFor="let res of m.movies">
         <li>
           {{ res.title }}
-          <!-- {{ res.categories }} -->
+          {{ res.categories }}
           <img src="{{ res.images[0]['url'] }}" width="100" height="150" />
         </li>
       </ng-container>
