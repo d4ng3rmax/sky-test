@@ -17,17 +17,19 @@ export class HomeComponent implements OnInit {
   constructor(private movieService: MoviesService) { }
 
   ngOnInit() {
-    this.listMovies();
+    // this.listMovies();
+
+    var outMovies: any = this.listMovies();
 
     // categories
     // https://stackoverflow.com/questions/49915051/angular-ngfor-create-table-with-group-item
 
-    var groupArr = this.movies.reduce((r, { categories }) => {
-      if (!r.some(o => o.group == categories)) {
-        r.push({ categories, categoriesItem: this.movies.filter(v => v.categories == categories) });
-      }
-      return r;
-    }, []);
+    // var groupArr = outMovies.reduce((r, { categories }) => {
+    //   if (!r.some(o => o.categories == categories)) {
+    //     r.push({ categories, categoriesItem: outMovies.filter(v => v.categories == categories) });
+    //   }
+    //   return r;
+    // }, []);
   }
 
   listMovies() {

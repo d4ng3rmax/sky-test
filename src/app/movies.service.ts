@@ -6,8 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MoviesService {
 
-  proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-  moviesUrl = 'https://sky-frontend.herokuapp.com/movies';
+  // proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  // moviesUrl = 'https://sky-frontend.herokuapp.com/movies';
+  
+  proxyUrl = '';
+  moviesUrl = '../assets/movies.json';
 
   constructor(private http: HttpClient) { }
 
