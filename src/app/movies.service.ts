@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,15 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-  listMoviesService() {
-    return this.http.get<any[]>(`${this.proxyUrl}${this.moviesUrl}`);
+  getMovies() {
+    // return this.http.get<any[]>(`${this.proxyUrl}${this.moviesUrl}`);
+
+    const listMoviesObservable = new Observable(observer => {
+      setTimeout(() => {
+        observer.next(this.http.get<any[]>(`${this.proxyUrl}${this.moviesUrl}`));
+      }, 1000);
+    });
+
+    return listMoviesObservable;
   }
 }
