@@ -2,9 +2,11 @@
 
 <ul>
   
-  <!-- <ng-container *ngFor="let m of movies">
-    <li>
-      {{ res.title }}
-    </li>
-  </ng-container> -->
+  <ng-container *ngFor="let key of objectKeys(movies)">
+    <ng-container *ngFor="let val of movies[key]">
+      <li>
+        {{ val.title }} - {{ val.images[0]['url'] }}
+      </li>
+    </ng-container>
+  </ng-container>
 </ul>

@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   finalContent: Array<any>;
   outFilter: any;
   organized: any;
+  objectKeys = Object.keys;
 
   constructor(private movieService: MoviesService) { }
 
