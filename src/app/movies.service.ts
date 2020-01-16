@@ -16,14 +16,14 @@ export class MoviesService {
   constructor(private http: HttpClient) { }
 
   getMovies() {
-    // return this.http.get<any[]>(`${this.proxyUrl}${this.moviesUrl}`);
+    return this.http.get<any[]>(`${this.proxyUrl}${this.moviesUrl}`);
 
-    const listMoviesObservable = new Observable(observer => {
-      setTimeout(() => {
-        observer.next(this.http.get<any[]>(`${this.proxyUrl}${this.moviesUrl}`));
-      }, 1000);
-    });
+    // const listMoviesObservable = new Observable(observer => {
+    //   setTimeout(() => {
+    //     observer.next(this.http.get<any[]>(`${this.proxyUrl}${this.moviesUrl}`));
+    //   }, 1000);
+    // });
 
-    return listMoviesObservable;
+    // return listMoviesObservable;
   }
 }
