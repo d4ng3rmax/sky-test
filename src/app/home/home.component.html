@@ -1,11 +1,10 @@
 <p>fine!</p>
-{{ finalContent }}
 
 <ul>
-  <ng-container *ngFor="let m of finalContent; let i = index">
+  <ng-container *ngFor="let m of movies; let i = index">
     <li>
       <!-- {{ res.title }} -->
-      {{ m }}
+      {{ m[0] }}
     </li>
   </ng-container>
 </ul>

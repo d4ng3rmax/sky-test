@@ -18,16 +18,14 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.listMovies();
   }
-  
-  ngAfterViewChecked() {
-    this.catalog = this.funcFilter("carousel-portrait");
-  }
 
   listMovies() {
     // this.movieService.getMovies().subscribe(res => this.movies = res);
-    const listMoviesObservable = this.movieService.getMovies();
-    listMoviesObservable.subscribe((res) => {
-      this.movies = res;
+    this.movieService.getMovies()
+      .subscribe((res) => {
+        this.movies = res,
+        error => console.log(error)
+        console.log('movies: ', this.movies)
   });
   }
 
