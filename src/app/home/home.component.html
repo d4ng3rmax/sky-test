@@ -5,7 +5,8 @@
   <ng-container *ngFor="let key of objectKeys(movies)">
     <ng-container *ngFor="let val of movies[key]">
       <li>
-        {{ val.title }} - {{ val.images[0]['url'] }}
+        {{ val.title }}
+        <img src="{{ val.images[0]['url'] }}" />
       </li>
     </ng-container>
   </ng-container>
