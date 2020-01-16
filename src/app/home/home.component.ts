@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   catalog: Array<any>;
   finalContent: Array<any>;
   outFilter: any;
+  organized: any;
 
   constructor(private movieService: MoviesService) { }
 
@@ -27,8 +28,10 @@ export class HomeComponent implements OnInit {
       res => {
         if (res) {
           this.outFilter = this.funcFilter(res, "carousel-portrait");
-          this.movies = this.organizar( this.outFilter );
-          console.log( this.movies );
+          this.organized = this.organizar( this.outFilter );
+          this.movies = this.organized;
+          console.log( 'this.movies', this.movies );
+          //console.log( this.movies );
         } else {
           // data not found
         }
