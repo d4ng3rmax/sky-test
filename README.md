@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Instalar
 
-Rodar `npm instal` ou `npm i` para instalar as dependencias.
+Rodar `npm instal` ou `npm i` para instalar as dependências.
 
 ## Rodar em DEV
 
