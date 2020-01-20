@@ -7,23 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class MoviesService {
 
-  // proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-  // moviesUrl = 'https://sky-frontend.herokuapp.com/movies';
+  proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  moviesUrl = 'https://sky-frontend.herokuapp.com/movies';
   
-  proxyUrl = '';
-  moviesUrl = '../assets/movies.json';
+  // proxyUrl = '';
+  // moviesUrl = '../assets/movies.json';
 
   constructor(private http: HttpClient) { }
 
   getMovies() {
     return this.http.get<any[]>(`${this.proxyUrl}${this.moviesUrl}`);
-
-    // const listMoviesObservable = new Observable(observer => {
-    //   setTimeout(() => {
-    //     observer.next(this.http.get<any[]>(`${this.proxyUrl}${this.moviesUrl}`));
-    //   }, 1000);
-    // });
-
-    // return listMoviesObservable;
   }
 }
