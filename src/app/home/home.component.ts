@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   finalContent: Array<any>;
   outFilter: any;
   organized: any;
-  objectKeys = Object.keys;
+  objectKeys = Object.keys || {};
 
   constructor(private movieService: MoviesService) { }
 
@@ -23,8 +23,6 @@ export class HomeComponent implements OnInit {
   }
   
   listMovies() {
-    // this.movieService.getMovies().subscribe(res => this.movies = res);
-    
     this.movieService.getMovies().subscribe(
       res => {
         if (res) {
@@ -32,7 +30,6 @@ export class HomeComponent implements OnInit {
           this.organized = this.organizar( this.outFilter );
           this.movies = this.organized;
           console.log( 'this.movies', this.movies );
-          //console.log( this.movies );
         } else {
           // data not found
         }

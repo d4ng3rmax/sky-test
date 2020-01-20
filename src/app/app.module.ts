@@ -9,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MoviesService } from './movies.service';
 import { CategoryPipe } from './pipes/category.pipe';
+import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
   {
@@ -26,8 +27,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    CategoryPipe,
     HomeComponent,
-    CategoryPipe
+    HeaderComponent
   ],
   imports: [
     RouterModule.forRoot(

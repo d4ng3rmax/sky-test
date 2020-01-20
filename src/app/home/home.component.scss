@@ -1,7 +1,47 @@
-li {
-    font-size: 0.5rem;
-}
+#home-component{
 
-img {
-    width: 15px;
+  li {
+      font-size: 1rem;
+  }
+  
+  img {
+      width: 241px;
+      height: 375px;
+  }
+  @media (max-width: 575px) {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .title-show {
+    margin: 15px;
+    font-size: 1.1rem;
+  }
+
+  .movie-title {
+    display: block;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  a {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+  }
+
+  @media (max-width: 575px) {
+    a {
+      margin: 0;
+    }
+  }
+
 }

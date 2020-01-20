@@ -1,13 +1,18 @@
-<p>fine!</p>
+<div id="home-component">
 
-<ul>
-  
-  <ng-container *ngFor="let key of objectKeys(movies)">
-    <ng-container *ngFor="let val of movies[key]">
-      <li>
-        {{ val.title }}
-        <img src="{{ val.images[0]['url'] }}" />
-      </li>
-    </ng-container>
-  </ng-container>
-</ul>
+  <app-header></app-header>
+
+  <div class="movie-list">
+    <!-- <ul> -->
+      <ng-container *ngFor="let key of objectKeys(movies)">
+        <ng-container *ngFor="let val of movies[key]">
+          <div class="movie-title" [className]="val.categoryListName ? 'title-show' : 'movie-title'">{{ val.categoryListName }}</div>
+          <a href="{{ val.title }}" title="{{ val.title }}">
+            <img src="{{ val.images[0]['url'] }}" />
+          </a>
+        </ng-container>
+      </ng-container>
+    <!-- </ul> -->
+  </div>
+
+</div>
