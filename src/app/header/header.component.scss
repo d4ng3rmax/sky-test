@@ -14,20 +14,20 @@
 }
 
 @media (max-width: 575px) {
-  .theme_sky .header-sky .brand-area .logo {
+  .logo {
     margin-right: 0;
   }
 }
 
 @media (min-width: 768px) {
-  .theme_sky .header-sky .brand-area .logo {
+  .logo {
     margin-right: 71px;
     margin-left: 16px;
   }
 }
 
 @media (min-width: 992px) {
-  .theme_sky .header-sky .brand-area .logo {
+  .logo {
     margin-right: 71px;
     margin-left: 0;
   }
@@ -54,10 +54,6 @@
 }
 
 #main-nav {
-  display: flex;
-  flex-direction: row;
-  margin-right: auto;
-  flex-grow: 1;
 }
 
 #nav-menu {
